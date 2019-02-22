@@ -16,8 +16,8 @@ include_once 'templates/header.php';
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Crear Administrador
-            <small>Datos para crear un administrador</small>
+            Agrega un Invitado
+            <small>Datos para agregar un nuevo invitado</small>
         </h1>
         <!-- <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -34,7 +34,7 @@ include_once 'templates/header.php';
                 <!-- Default box -->
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Crear Admistrador</h3>
+                        <h3 class="box-title">Agregar un Invitado</h3>
 
                         <!-- <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -45,35 +45,35 @@ include_once 'templates/header.php';
     </div> -->
                     </div>
                     <div class="box-body">
-                        <form role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-admin.php">
+                    <!-- enctype se utiliza para subir archivos-->
+                        <form role="form" name="guardar-registro" id="guardar-registro-archivo" method="post"
+                            action="modelo-invitados.php" enctype="multipart/form-data">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="usuario">Usuario</label>
-                                    <input type="texto" class="form-control" id="usuario"
-                                       name="usuario" placeholder="Usuario">
+                                    <label for="nombre_invitado">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombre_invitado"
+                                        name="nombre_invitado" placeholder="Nombre del invitado">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nombre">Nombre</label>
-                                    <input type="texto" class="form-control" id="nombre"
-                                       name="nombre" placeholder="Nombre">
+                                    <label for="apellido_invitado">Apellido:</label>
+                                    <input type="text" class="form-control" id="apellido_invitado"
+                                        name="apellido_invitado" placeholder="Apellido del invitado">
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Contraseña</label>
-                                    <input type="password" class="form-control" id="password"
-                                       name="password" placeholder="Contraseña">
+                                    <label for="biografia_invitado">Biografia:</label>
+                                    <textarea class="form-control" name="biografia_invitado" id="biografia_invitado" cols="8" placeholder="Biografia"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Repetir Contraseña</label>
-                                    <input type="password" class="form-control" id="repetir-password"
-                                       name="repetir-password" placeholder="Repetir Contraseña">
-                                    <span id="resultado-password" class="help-block"></span>
+                                    <label for="imagen_invitado">Imagen</label>
+                                    <input type="file" id="imagen_invitado" name="archivo_imagen">
+                                    <p class="help-block">Agrege una foto del invitado.</p>
                                 </div>
                             </div>
                             <!-- /.box-body -->
 
                             <div class="box-footer">
                                 <input type="hidden" name="registro" value="nuevo">
-                                <button type="submit" class="btn btn-primary" id="crear_registro_admin">Enviar</button>
+                                <button type="submit" class="btn btn-primary" id="crear_registro">Enviar</button>
                             </div>
                         </form>
                     </div>

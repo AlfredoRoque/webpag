@@ -6,7 +6,8 @@
       <div class="user-panel">
         
         <div class="pull-left info">
-          <p>Alfredo Roque</p>
+
+          <p><?php echo $_SESSION['nombre']; ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -42,8 +43,8 @@
             <span>Eventos</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> Ver todos</a></li>
-            <li><a href="#"><i class="fa fa-plus-circle"></i> Agregar</a></li>
+            <li><a href="lista-evento.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
+            <li><a href="crear-evento.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -53,8 +54,8 @@
             <span>Categoria Evento</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> Ver todos</a></li>
-            <li><a href="#"><i class="fa fa-plus-circle"></i> Agregar</a></li>
+            <li><a href="lista-categoria.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
+            <li><a href="crear-categoria.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -64,8 +65,8 @@
             <span>Invitados</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> Ver todos</a></li>
-            <li><a href="#"><i class="fa fa-plus-circle"></i> Agregar</a></li>
+            <li><a href="lista-invitados.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
+            <li><a href="crear-invitados.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
           </ul>
         </li>
 
@@ -76,11 +77,11 @@
             <span>Registrados</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> Ver todos</a></li>
-            <li><a href="#"><i class="fa fa-plus-circle"></i> Agregar</a></li>
+            <li><a href="lista-registrados.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
+            <li><a href="crear-registro.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
           </ul>
         </li>
-
+         <?php if($_SESSION['nivel'] == 1): ?>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-user"></i>
@@ -88,11 +89,11 @@
             <span>Administradores</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> Ver todos</a></li>
+            <li><a href="lista-admin.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
             <li><a href="crear-admin.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
           </ul>
         </li>
-
+          <?php endif; ?>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-comments"></i>

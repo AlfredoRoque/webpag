@@ -5,5 +5,6 @@ if ($conn->connect_error) {
 }
 //acentos y demas
 $conn->set_charset('utf8');
+// echo ":)";
 
 ?>

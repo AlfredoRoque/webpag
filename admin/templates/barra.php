@@ -4,7 +4,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="../index.php" class="logo">
+    <a href="admin-area.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>W</b>ST</span>
       <!-- logo for regular state and mobile devices -->
@@ -27,7 +27,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- <img src="#" class="user-image" alt="User Image"> -->
-              <span class="hidden-xs">Admin</span>
+              <span class="hidden-xs">Admin: <?php echo ' ' . $_SESSION['usuario']?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -39,10 +39,10 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-success btn-flat">Ajustes</a>
+                  <a href="editar-admin.php?id=<?php echo $_SESSION['id']?>" class="btn btn-success btn-flat">Ajustes</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-success btn-flat">Sign out</a>
+                  <a href="login.php?cerrar_sesion=true" class="btn btn-success btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

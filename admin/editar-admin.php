@@ -1,6 +1,13 @@
 <?php
 include_once 'funciones/sesiones.php';
 include_once 'funciones/funciones.php';
+$id = $_GET['id'];
+
+// Validar que se reciba un id entero
+if(!filter_var($id, FILTER_VALIDATE_INT)){
+    die('ERROR');
+}
+
 include_once 'templates/header.php';
 
 // barra principal
@@ -16,14 +23,9 @@ include_once 'templates/header.php';
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Crear Administrador
-            <small>Datos para crear un administrador</small>
+            Editar Administrador
+            <small>Datos para editar un administrador</small>
         </h1>
-        <!-- <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol> -->
     </section>
 
     <div class="row">
@@ -34,46 +36,39 @@ include_once 'templates/header.php';
                 <!-- Default box -->
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Crear Admistrador</h3>
-
-                        <!-- <div class="box-tools pull-right">
-      <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-              title="Collapse">
-        <i class="fa fa-minus"></i></button>
-      <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-        <i class="fa fa-times"></i></button>
-    </div> -->
+                        <h3 class="box-title">Editar Admistrador</h3>
                     </div>
                     <div class="box-body">
+                    <?php
+                          $sql = "SELECT * FROM admins WHERE id_admin = $id ";
+                          $resultado = $conn->query($sql);
+                          $admin = $resultado->fetch_assoc();
+                    ?>
+
                         <form role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-admin.php">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="usuario">Usuario</label>
                                     <input type="texto" class="form-control" id="usuario"
-                                       name="usuario" placeholder="Usuario">
+                                       name="usuario" placeholder="Usuario" value="<?php echo $admin['usuario']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="nombre">Nombre</label>
                                     <input type="texto" class="form-control" id="nombre"
-                                       name="nombre" placeholder="Nombre">
+                                       name="nombre" placeholder="Nombre" value="<?php echo $admin['nombre']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Contraseña</label>
                                     <input type="password" class="form-control" id="password"
                                        name="password" placeholder="Contraseña">
                                 </div>
-                                <div class="form-group">
-                                    <label for="password">Repetir Contraseña</label>
-                                    <input type="password" class="form-control" id="repetir-password"
-                                       name="repetir-password" placeholder="Repetir Contraseña">
-                                    <span id="resultado-password" class="help-block"></span>
-                                </div>
                             </div>
                             <!-- /.box-body -->
 
                             <div class="box-footer">
-                                <input type="hidden" name="registro" value="nuevo">
-                                <button type="submit" class="btn btn-primary" id="crear_registro_admin">Enviar</button>
+                                <input type="hidden" name="registro" value="actualizar">
+                                <input type="hidden" name="id_registro" value="<?php echo $id; ?>">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
                         </form>
                     </div>

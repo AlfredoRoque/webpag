@@ -16,8 +16,8 @@ include_once 'templates/header.php';
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Crear Administrador
-            <small>Datos para crear un administrador</small>
+            Crear Categoria
+            <small>Datos para crear una nueva categoria de evento</small>
         </h1>
         <!-- <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -34,7 +34,7 @@ include_once 'templates/header.php';
                 <!-- Default box -->
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Crear Admistrador</h3>
+                        <h3 class="box-title">Crear Categoria</h3>
 
                         <!-- <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -45,35 +45,28 @@ include_once 'templates/header.php';
     </div> -->
                     </div>
                     <div class="box-body">
-                        <form role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-admin.php">
+                        <form role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-categoria.php">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="usuario">Usuario</label>
-                                    <input type="texto" class="form-control" id="usuario"
-                                       name="usuario" placeholder="Usuario">
+                                    <label for="usuario">Categoria:</label>
+                                    <input type="texto" class="form-control" id="nombre_categoria"
+                                       name="nombre_categoria" placeholder="Nombre de la categoria">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nombre">Nombre</label>
-                                    <input type="texto" class="form-control" id="nombre"
-                                       name="nombre" placeholder="Nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Contraseña</label>
-                                    <input type="password" class="form-control" id="password"
-                                       name="password" placeholder="Contraseña">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Repetir Contraseña</label>
-                                    <input type="password" class="form-control" id="repetir-password"
-                                       name="repetir-password" placeholder="Repetir Contraseña">
-                                    <span id="resultado-password" class="help-block"></span>
+                                    <label>Icono:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-address-book"></i>
+                                        </div>
+                                        <input type="text" id="icono" name="icono" class="form-control pull-right" placeholder="fa-icon">
+                                    </div>
                                 </div>
                             </div>
                             <!-- /.box-body -->
 
                             <div class="box-footer">
                                 <input type="hidden" name="registro" value="nuevo">
-                                <button type="submit" class="btn btn-primary" id="crear_registro_admin">Enviar</button>
+                                <button type="submit" class="btn btn-primary" id="crear_registro">Enviar</button>
                             </div>
                         </form>
                     </div>
