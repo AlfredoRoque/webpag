@@ -26,6 +26,10 @@
 
   <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 
+  <link rel="stylesheet" href="css/all.css">
+  <!-- Morris charts -->
+  <link rel="stylesheet" href="css/morris.css">
+
   <link rel="stylesheet" href="css/select2.min.css">
   <!-- Bootstrap time Picker -->
   <link rel="stylesheet" href="css/bootstrap-timepicker.min.css">

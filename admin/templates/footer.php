@@ -36,6 +36,11 @@
 <script src="js/dataTables.bootstrap.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/login-ajax.js"></script>
+<script src="../js/cotizador.js"></script>
+<script src="js/icheck.min.js"></script>
+<!-- Morris.js charts -->
+<script src="js/raphael.min.js"></script>
+<script src="js/morris.min.js"></script>
 
 </body>
 </html>

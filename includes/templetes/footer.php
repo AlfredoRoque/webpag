@@ -6,11 +6,7 @@
       </div>
       <div class="ultimos-tweets">
         <h3>Ultimos <span>tweets</span></h3>
-        <ul>
-          <li>Entre los distintos tipos se encuentra el párrafo científico que se caracteriza.</li>
-          <li>Entre los distintos tipos se encuentra el párrafo científico que se caracteriza.</li>
-          <li>Entre los distintos tipos se encuentra el párrafo científico que se caracteriza.</li>
-        </ul>
+        <a class="twitter-timeline" data-height="400" data-theme="dark" data-link-color="#fe4918" href="https://twitter.com/Alfredo74940682?ref_src=twsrc%5Etfw">Tweets by Alfredo74940682</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <div class="menu">
         <h3>Redes <span>sociales</span></h3>
@@ -81,6 +77,7 @@
       }
   ?>
   <script src="js/main.js"></script>
+  <script src="js/cotizador.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
@@ -89,6 +86,15 @@
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
   <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"fa922831087800772fb91c77e","lid":"4b8fc8afff","uniqueMethods":true}) })</script>
+  
+<?php
+	// Guarda todo el contenido a un archivo
+	$fp = fopen($archivoCache, 'w');
+	fwrite($fp, ob_get_contents());
+	fclose($fp);
+	// Enviar al navegador
+	ob_end_flush();
+?>
 </body>
 
 </html>

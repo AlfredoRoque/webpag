@@ -840,17 +840,26 @@ div.paquetes .tabla-precio input{
 }
 .contenido-dia > div p{
     text-align: left;
+    font-weight: bold;
 }
 .contenido-dia > div label{
     display: block;
     margin-bottom: 10px;
 }
 .contenido-dia > div input{
-    margin-right: 15px;
+    margin-right: 10px;
 }
 .contenido-dia > div label time{
     color: #fe4918;
     font-weight: bold;
+}
+.contenido-dia .autor{
+    font-family: Arial, Helvetica;
+    font-weight: bold;
+    font-size: 18px;
+}
+.contenido-dia .evento{
+    font-weight: normal;
 }
 /* Resumen Registro */
 div.resumen p{

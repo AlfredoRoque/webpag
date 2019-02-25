@@ -8,6 +8,7 @@ include_once 'templates/header.php';
 
 //  barra lateral izquierda
  include_once 'templates/navegacion.php'; 
+ error_reporting(E_ALL ^ E_WARNING);
 ?>
 
 
@@ -70,6 +71,7 @@ include_once 'templates/header.php';
                                      <td><?php echo $registrado['fecha_registro']; ?></td>
                                      <td>
                                         <?php 
+                                        
                                             $articulos = json_decode($registrado['pases_articulos'], true);
                                             $arreglo_articulos = array(
                                                 'un_dia' => 'Pase 1 día',
@@ -79,9 +81,13 @@ include_once 'templates/header.php';
                                                 'etiquetas' => 'Etiquetas',
                                                 'pulseras' => 'Pulseras'
                                             );
-
                                             foreach ($articulos as $llave => $articulo) {
+                                              if(array_key_exists('cantidad', $articulo)){
+                                                echo $articulo['cantidad']. " " . $arreglo_articulos[$llave]. "<br>";
+                                              }else{
                                                 echo $articulo. " " . $arreglo_articulos[$llave]. "<br>";
+                                              }
+                                                
                                             }
                                          ?> 
                                      </td>
@@ -91,12 +97,12 @@ include_once 'templates/header.php';
                                          $talleres = json_decode($eventos_resultado, true);
                                          
                                          $talleres = implode("', '", $talleres['eventos']);
-                                         $sql_talleres = " SELECT nombre_evento, fecha_evento, hora_evento FROM eventos WHERE clave IN ('$talleres') ";
+                                         $sql_talleres = " SELECT nombre_evento, fecha_evento, hora_evento FROM eventos WHERE evento_id IN ('$talleres') ";
 
                                          $resultado_talleres = $conn->query($sql_talleres);
 
                                          while ($eventos = $resultado_talleres->fetch_assoc()) {
-                                             echo $eventos['nombre_evento'].$eventos['fecha_evento'].$eventos['hora_evento']. "<br>";
+                                             echo $eventos['nombre_evento']."/".$eventos['fecha_evento']."/".$eventos['hora_evento']. "<br>";
                                          }
                                          
                                         ?>
@@ -104,10 +110,10 @@ include_once 'templates/header.php';
                                      <td><?php echo $registrado['nombre_regalo']; ?></td>
                                      <td><?php echo $registrado['total_pagado']; ?></td>
                                      <td>
-                                        <a href="editar-registrado.php?id=<?php echo $registrado['id_registrado']; ?>" class="btn bg-orange btn-flat margin">
+                                        <a href="editar-registro.php?id=<?php echo $registrado['id_registrado']; ?>" class="btn bg-orange btn-flat margin">
                                            <i class="fa fa-pencil"></i>
                                         </a>
-                                        <a href="#" data-id="<?php echo $registrado['id_registrado']; ?>" data-tipo="registrados" class="btn bg-maroon margin borrar-registro">
+                                        <a href="#" data-id="<?php echo $registrado['id_registrado']; ?>" data-tipo="registrado" class="btn bg-maroon margin borrar-registro">
                                            <i class="fa fa-trash"></i>
                                         </a>
                                      </td>

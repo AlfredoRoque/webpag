@@ -75,4 +75,23 @@ $('.timepicker').timepicker({
   $('#icono').iconpicker(); 
 
 
+  $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+    checkboxClass: 'icheckbox_flat-green',
+    radioClass   : 'iradio_flat-green'
+  })
+
+  // LINE CHART
+  // actualiza la grafica automaticamente con el json recibido
+  $.getJSON('servicio-registrados.php', function(dato){
+  var line = new Morris.Line({
+    element: 'grafica-registros',
+    resize: true,
+    data: dato,
+    xkey: 'fecha',
+    ykeys: ['cantidad'],
+    labels: ['Item 1'],
+    lineColors: ['#3c8dbc'],
+    hideHover: 'auto'
+  });
+});
 });
