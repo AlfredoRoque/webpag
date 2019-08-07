@@ -31,14 +31,14 @@
         if (document.getElementById('calcular')) {
         calcular.addEventListener('click', clacularMontos);
 
-        pase_dia.addEventListener('blur', mostrarDias);
-        pase_dosdias.addEventListener('blur', mostrarDias);
-        pase_completo.addEventListener('blur', mostrarDias);
+        pase_dia.addEventListener('input', mostrarDias);
+        pase_dosdias.addEventListener('input', mostrarDias);
+        pase_completo.addEventListener('input', mostrarDias);
 
-        nombre.addEventListener('blur', validarCampos);
-        apellido.addEventListener('blur', validarCampos);
-        email.addEventListener('blur', validarCampos);
-        email.addEventListener('blur', validarMail);
+        nombre.addEventListener('input', validarCampos);
+        apellido.addEventListener('input', validarCampos);
+        email.addEventListener('input', validarCampos);
+        email.addEventListener('input', validarMail);
         
         var formulario_editar = document.getElementsByClassName('editar-registrado');
         if(formulario_editar.length > 0){
@@ -119,7 +119,7 @@
         }
 
         function mostrarDias() {
-            var boletosDia=parseInt(pase_dia.value, 10)||0,
+            var     boletosDia=parseInt(pase_dia.value, 10)||0,
                     boletos2Dias=parseInt(pase_dosdias.value, 10)||0,
                     boletoCompleto=parseInt(pase_completo.value, 10)||0;
 
@@ -137,11 +137,17 @@
                         diasElegidos.push('viernes','sabado','domingo');
                         console.log(diasElegidos);
                     }
+                    if(diasElegidos.length > 0){
                     for(var i=0; i<diasElegidos.length; i++){
-                        document.getElementById(diasElegidos[i]).style.display = "block";
+                        document.getElementById(diasElegidos[i]).style.display = 'block';
+                        } 
+                    }else{
+                        document.getElementById('viernes').style.display = '';
+                        document.getElementById('sabado').style.display = '';
+                        document.getElementById('domingo').style.display = '';
                     }
-                    
+                   
+                }
         }
-    }
     });
 })();

@@ -38,6 +38,8 @@ include_once 'templates/header.php';
                   <th>Descripcion</th>
                   <th>Foto</th>
                   <th>Acciones</th>
+                  <th>Testimonial</th>
+                  <th>Twiter</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -54,6 +56,8 @@ include_once 'templates/header.php';
                                      <td><?php echo $invitado['nombre_invitado']." ".$invitado['apellido_invitado']; ?></td>
                                      <td><?php echo $invitado['descripcion']; ?></td>
                                      <td><img src="../img/invitados/<?php echo $invitado['url_imagen']; ?>" width="150"></td>
+                                     <td><?php echo $invitado['testimonial']; ?></td>
+                                     <td><?php echo $invitado['twiter']; ?></td>
                                      <td>
                                         <a href="editar-invitado.php?id=<?php echo $invitado['invitado_id']; ?>" class="btn bg-orange btn-flat margin">
                                            <i class="fa fa-pencil"></i>
@@ -72,6 +76,8 @@ include_once 'templates/header.php';
                   <th>Descripcion</th>
                   <th>foto</th>
                   <th>Acciones</th>
+                  <th>Testimonial</th>
+                  <th>Twiter</th>
                 </tr>
                 </tfoot>
               </table>

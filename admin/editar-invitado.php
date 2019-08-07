@@ -72,6 +72,14 @@ include_once 'templates/header.php';
                                     cols="8" placeholder="Biografia" style="height:200px;"><?php echo $invitado['descripcion']; ?></textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label for="testimonial_invitado">Testimonial:</label>
+                                    <textarea class="form-control" style="height:200px;" name="testimonial_invitado" id="testimonial_invitado" cols="8" placeholder="Testimonial"> <?php echo $invitado['testimonial']; ?> </textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="twiter_invitado">Twiter:</label>
+                                    <input type="text" class="form-control" name="twiter_invitado" id="twiter_invitado" cols="8" placeholder="Twiter" value="<?php echo $invitado['twiter']; ?>">
+                                </div>
+                                <div class="form-group">
                                     <label for="imagen_actual">Imagen actual</label>
                                     <br>
                                     <img src="../img/invitados/<?php echo $invitado['url_imagen']; ?>" width="200">

@@ -1,4 +1,7 @@
-    var map = L.map('mapa').setView([19.2327,-99.6740], 17);
+    // imprimir el mapa solo en el index
+    var existe = $('.mapa').show();
+    if(existe.length == 1){
+        var map = L.map('mapa').setView([19.2327,-99.6740], 17);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -7,8 +10,7 @@
         L.marker([19.2327,-99.6740]).addTo(map)
           .bindPopup('Aqui estoy.')
           .openPopup();
-    
-
+    }
 
 $(function(){
 
@@ -73,8 +75,16 @@ $(function(){
         $('#segundos').html(event.strftime('%S'));
     });
 
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+        checkboxClass: 'icheckbox_flat-green',
+        radioClass   : 'iradio_flat-green'
+      });
+
+      var existeInv = $('.invitado-info').show();
+    if(existeInv.length  > 0){
     // colorbox
     $('.invitado-info').colorbox({inline:true, width:"50%"});
     $('.boton_newsletter').colorbox({inline:true, width:"50%"});
-
+     }
+    
 });

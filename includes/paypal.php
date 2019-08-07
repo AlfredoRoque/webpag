@@ -8,7 +8,7 @@ define('URL_SITIO', 'http://localhost/webpag');
 
 $apiContext = new \PayPal\Rest\ApiContext(
     new \PayPal\Auth\OAuthTokenCredential(
-        'AZLocmyOY7TRDHi_K0ZCb2oPT-rcphT6hiS39rN-OOqd6Rjss-aJviUllF-0qmC7gvvrSUHM66CG-KbU',// ClienteID
-        'EIIWi8lMW4oZ5hHuojU_1c_zVTmK78m2qbkiewsWvpE9cX5xHvijkXr2r82v_796HM2358HYd--Kg4ek'// Secret
+        'AQO77Z7zhXWRUeI5lqX_7xjHCoXPN5nDPsBE1ERaM_z1fYcflP8gM2GzvfYD0qsDvzAG-77voiNvsanw',// ClienteID
+        'EHzniuEhzQ2PX3PcbjS5fg6fX2s1ilZGBgVOFIT-GOcRjUI9_N83VrT8GjTEpAP24rZzKHNFfgFVKPDw'// Secret
     )
 );

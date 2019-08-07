@@ -12,6 +12,8 @@ if($_POST['registro'] == 'nuevo' ){
     $nombre = $_POST['nombre_invitado'];
     $apellido = $_POST['apellido_invitado'];
     $biografia = $_POST['biografia_invitado'];
+    $testimonial = $_POST['testimonial_invitado'];
+    $twiter = $_POST['twiter_invitado'];
 
     $directorio = "../img/invitados/";
     // comprobar que exista la carpeta y si no crearla
@@ -30,8 +32,8 @@ if($_POST['registro'] == 'nuevo' ){
     }
 
     try {
-        $stmt = $conn->prepare("INSERT INTO invitados (nombre_invitado, apellido_invitado, descripcion, url_imagen) VALUES (?, ?, ?, ? )");
-        $stmt->bind_param('ssss', $nombre, $apellido, $biografia, $imagen_url);
+        $stmt = $conn->prepare("INSERT INTO invitados (nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES (?, ?, ?, ?, ?, ? )");
+        $stmt->bind_param('ssssss', $nombre, $apellido, $biografia, $imagen_url, $testimonial, $twiter);
         $stmt->execute();
         $id_insertado = $stmt->insert_id;
         if($stmt->affected_rows){
@@ -59,6 +61,8 @@ if($_POST['registro']  == 'actualizar' ){
     $nombre = $_POST['nombre_invitado'];
     $apellido = $_POST['apellido_invitado'];
     $biografia = $_POST['biografia_invitado'];
+    $testimonial = $_POST['testimonial_invitado'];
+    $twiter = $_POST['twiter_invitado'];
     $id_registro = $_POST['id_registro'];
 
     $directorio = "../img/invitados/";
@@ -81,12 +85,12 @@ if($_POST['registro']  == 'actualizar' ){
 
         if($_FILES['archivo_imagen']['size'] > 0){
             // con imagen
-            $stmt = $conn->prepare(" UPDATE invitados SET nombre_invitado = ?, apellido_invitado = ?, descripcion = ?, url_imagen = ?, editado = NOW() WHERE invitado_id = ? ");
-            $stmt->bind_param('sssss', $nombre, $apellido, $biografia, $imagen_url, $id_registro);
+            $stmt = $conn->prepare(" UPDATE invitados SET nombre_invitado = ?, apellido_invitado = ?, descripcion = ?, url_imagen = ?, testimonial = ?, twiter = ?, editado = NOW() WHERE invitado_id = ? ");
+            $stmt->bind_param('sssssss', $nombre, $apellido, $biografia, $imagen_url, $testimonial, $twiter, $id_registro);
         }else{
             // sin imagen
-            $stmt = $conn->prepare(" UPDATE invitados SET nombre_invitado = ?, apellido_invitado = ?, descripcion = ?, editado = NOW() WHERE invitado_id = ? ");
-            $stmt->bind_param('ssss', $nombre, $apellido, $biografia, $id_registro);
+            $stmt = $conn->prepare(" UPDATE invitados SET nombre_invitado = ?, apellido_invitado = ?, descripcion = ?,testimonial = ?, twiter = ?, editado = NOW() WHERE invitado_id = ? ");
+            $stmt->bind_param('ssssss', $nombre, $apellido, $biografia, $testimonial, $twiter, $id_registro);
 
         }
         $stmt->execute();

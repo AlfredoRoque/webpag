@@ -1,19 +1,19 @@
 <?php
-    // Creando un archivo cahe para la vista del front-end
-    // Definir un nombre para cachear
-    $archivo = basename($_SERVER['PHP_SELF']);
-    $pagina = str_replace(".php", "", $archivo);
-    // Definir archivo para cachear (puede ser .php también)
-	$archivoCache = 'cache/'.$pagina.'.php';
-	// Cuanto tiempo deberá estar este archivo almacenado
-	$tiempo = 36000;
-	// Checar que el archivo exista, el tiempo sea el adecuado y muestralo
-	if (file_exists($archivoCache) && time() - $tiempo < filemtime($archivoCache)) {
-   	include($archivoCache);
-    	exit;
-	}
-	// Si el archivo no existe, o el tiempo de cacheo ya se venció genera uno nuevo
-	ob_start();
+  //   // Creando un archivo cahe para la vista del front-end
+  //   // Definir un nombre para cachear
+  //   $archivo = basename($_SERVER['PHP_SELF']);
+  //   $pagina = str_replace(".php", "", $archivo);
+  //   // Definir archivo para cachear (puede ser .php también)
+	// $archivoCache = 'cache/'.$pagina.'.php';
+	// // Cuanto tiempo deberá estar este archivo almacenado
+	// $tiempo = 36000;
+	// // Checar que el archivo exista, el tiempo sea el adecuado y muestralo
+	// if (file_exists($archivoCache) && time() - $tiempo < filemtime($archivoCache)) {
+  //  	include($archivoCache);
+  //   	exit;
+	// }
+	// // Si el archivo no existe, o el tiempo de cacheo ya se venció genera uno nuevo
+	// ob_start();
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -35,16 +35,14 @@
   <?php 
       $archivo = basename($_SERVER['PHP_SELF']);
       $pagina = str_replace(".php", "", $archivo);
-      if ($pagina == "invitados_code" || $pagina == "index") {
+      if ($pagina == "invitados" || $pagina == "index") {
         echo '<link rel="stylesheet" href="css/colorbox.css">';
       }elseif ($pagina == "conferencia") {
         echo '<link rel="stylesheet" href="css/lightbox.css">';
-      }elseif ($pagina == "invitados") {
-        echo '<script src="js/jquery.colorbox-min.js"></script>';
-        echo '<script src="js/lightbox.js"></script>';
       }
   ?>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="admin/css/all.css">
 </head>
 
 <body class="<?php echo $pagina; ?>">
@@ -56,18 +54,18 @@
     <div class="hero">
       <div class="contenido-header">
         <nav class="redes-sociales">
-          <a href="http://www.twitter.com"><i class="fab fa-twitter-square"></i></i></a>
-          <a href="http://www.facebook.com"><i class="fab fa-facebook"></i></a>
-          <a href="http://www.instagram.com"><i class="fab fa-instagram"></i></a>
-          <a href="http://www.youtube.com"><i class="fab fa-youtube"></i></a>
+          <a target="_blanck" href="http://www.twitter.com"><i class="fab fa-twitter-square"></i></i></a>
+          <a target="_blanck" href="http://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a target="_blanck" href="http://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a target="_blanck" href="http://www.youtube.com"><i class="fab fa-youtube"></i></a>
         </nav>
         <div class="informacion-evento">
           <div class="clearfix">
              <p class="fecha"><i class="far fa-calendar-alt"></i> 10-12 Dic</p>
              <p class="ciudad"><i class="fas fa-map-marked-alt"></i> Toluca, MX</p>
           </div>
-          <h1 class="nombre-sitio">Proyecto</h1>
-          <p class="slogan">Una gran conferenia<span> programacion</span></p>
+          <h1 class="nombre-sitio">WEB PAG</h1>
+          <p class="slogan">Una gran conferenia<span> programación</span></p>
         </div>
       </div><!--informacion del evento-->
         

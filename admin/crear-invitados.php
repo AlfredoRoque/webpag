@@ -68,6 +68,14 @@ include_once 'templates/header.php';
                                     <input type="file" id="imagen_invitado" name="archivo_imagen">
                                     <p class="help-block">Agrege una foto del invitado.</p>
                                 </div>
+                                <div class="form-group">
+                                    <label for="testimonial_invitado">Testimonial:</label>
+                                    <textarea class="form-control" name="testimonial_invitado" id="testimonial_invitado" cols="8" placeholder="Testimonial"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="twiter_invitado">Twiter:</label>
+                                    <textarea class="form-control" name="twiter_invitado" id="twiter_invitado" cols="8" placeholder="Twiter"></textarea>
+                                </div>
                             </div>
                             <!-- /.box-body -->
 

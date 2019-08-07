@@ -201,25 +201,25 @@ h1.nombre-sitio span{
 }
 @media only screen and (min-width: 992px){
     .char1{
-        top:20px; right: 20px;
+        top:10px; right: 20px;
     }
     .char2{
-        top:0px; right: -20px;
+        top:0px; right: 10px;
     }
     .char3{
         top:10px; right: 20px;
     }
     .char4{
-        top:5px; right: 10px;
+        top:0px; right: 10px;
     }
     .char5{
-        top:15px; right: 10px;
+        top:10px; right: 20px;
     }
     .char6{
-        top:5px; right: 10px;
+        top:0px; right: 10px;
     }
     .char7{
-        top:20px; right: -10px;
+        top:10px; right: 20px;
     }
     .char8{
         top:0px; right: 10px;
@@ -291,6 +291,8 @@ p.ciudad{
 }
 p.slogan{
     text-transform: none!important;
+    font-size: 1.8rem!important; 
+    color: #fe4918;
 }
 p.slogan span{
     font-weight: bold;
@@ -299,6 +301,7 @@ h1.nombre-sitio{
     font-size: 5.9vw;
     text-transform: uppercase; 
     font-family: 'PT Sans', sans-serif;
+    color: #fe4918;
 }
 @media only screen and (min-width: 768px){
     h1.nombre-sitio{
@@ -310,7 +313,7 @@ h1.nombre-sitio{
 /*barra*/
 div.barra{
     background-color: #353535;
-    padding: 20px 0;
+    padding: 2px 0;
 }
 .fixed{
     position: fixed;
@@ -360,8 +363,7 @@ nav.navegacion-principal a:last-child:hover{
 }
 @media only screen and (min-width: 768px){
     nav.navegacion-principal{
-        width: 67%;
-        float: right;
+        width: 100%;
         text-align: right;
         display: block;
 
@@ -393,8 +395,8 @@ div.menu-movil:hover{
     }
 }
 div.menu-movil span{
-    height: 8px;
-    margin-bottom: 6px;
+    height: 15px;
+    margin-bottom: 11px;
     background-color: white;
     display: block;
 }

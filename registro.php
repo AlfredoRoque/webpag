@@ -139,7 +139,7 @@
 
                         <?php foreach($eventos_dia as $evento): ?>
                         <label style="text-align: justifed;">
-                            <input type="checkbox" name="registro[]" id="<?php echo $evento['id']; ?>"
+                            <input class="minimal" type="checkbox" name="registro[]" id="<?php echo $evento['id']; ?>"
                                 value="<?php echo $evento['id']; ?>">
                             <time><?php echo $evento['hora']." "; ?></time>
                             <span class="evento"><?php echo $evento['nombre_evento']."<br>"; ?></span>

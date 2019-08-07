@@ -6,15 +6,15 @@
       </div>
       <div class="ultimos-tweets">
         <h3>Ultimos <span>tweets</span></h3>
-        <a class="twitter-timeline" data-height="400" data-theme="dark" data-link-color="#fe4918" href="https://twitter.com/Alfredo74940682?ref_src=twsrc%5Etfw">Tweets by Alfredo74940682</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline" data-height="400" data-theme="dark" data-link-color="#fe4918" href="https://twitter.com/Alfredo_Rocke?ref_src=twsrc%5Etfw">Tweets by Alfredo_Rocke</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <div class="menu">
         <h3>Redes <span>sociales</span></h3>
         <nav class="redes-sociales">
-          <a href="http://www.facebook.com"><i class="fab fa-facebook"></i></a>
-          <a href="http://www.twitter.com"><i class="fab fa-twitter-square"></i></i></a>
-          <a href="http://www.instagram.com"><i class="fab fa-instagram"></i></a>
-          <a href="http://www.youtube.com"><i class="fab fa-youtube"></i></a>
+          <a target="_blanck" href="http://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a target="_blanck" href="http://www.twitter.com"><i class="fab fa-twitter-square"></i></i></a>
+          <a target="_blanck" href="http://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a target="_blanck" href="http://www.youtube.com"><i class="fab fa-youtube"></i></a>
         </nav>
       </div>
     </div>
@@ -78,6 +78,7 @@
   ?>
   <script src="js/main.js"></script>
   <script src="js/cotizador.js"></script>
+  <script src="admin/js/icheck.min.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
@@ -88,12 +89,12 @@
   <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"fa922831087800772fb91c77e","lid":"4b8fc8afff","uniqueMethods":true}) })</script>
   
 <?php
-	// Guarda todo el contenido a un archivo
-	$fp = fopen($archivoCache, 'w');
-	fwrite($fp, ob_get_contents());
-	fclose($fp);
-	// Enviar al navegador
-	ob_end_flush();
+	// // Guarda todo el contenido a un archivo
+	// $fp = fopen($archivoCache, 'w');
+	// fwrite($fp, ob_get_contents());
+	// fclose($fp);
+	// // Enviar al navegador
+	// ob_end_flush();
 ?>
 </body>
 

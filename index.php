@@ -1,4 +1,15 @@
 <?php include_once 'includes/templetes/header.php'; ?>
+<?php 
+         try{
+             require_once('includes/funciones/db_conexion.php');
+             $sql ="SELECT * FROM invitados WHERE invitado_id <= 4"; 
+             $res = $conn->query($sql);
+             $invitado = $res->fetch_assoc();
+         }catch(\Exception $e){
+             echo $e->getMessage();
+         }
+
+        ?>
   <section class="seccion contenedor">
     <h2>La mejor conferencia de diseño web</h2>
     <p>
@@ -8,7 +19,7 @@
 
   <section class="programa">
     <div class="contenedo-video">
-      <video autoplay muted loop poster="img/bg-talleres.jpg">
+      <video  width="1340" height="900" autoplay muted loop poster="img/bg-talleres.jpg">
         <source src="video/video.mp4" type="video/mp4">
         <source src="video/video.webm" type="video/webm">
         <source src="video/video.ogv" type="video/ogg">
@@ -52,7 +63,12 @@
               nombre_invitado, apellido_invitado FROM eventos 
               INNER JOIN categoria_evento ON eventos.id_cat_evento = categoria_evento.id_categoria 
               INNER JOIN invitados ON eventos.id_inv = invitados.invitado_id
-              AND eventos.id_cat_evento = 3 ORDER BY evento_id LIMIT 2; "; 
+              AND eventos.id_cat_evento = 3 ORDER BY evento_id LIMIT 2;
+              SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono,
+              nombre_invitado, apellido_invitado FROM eventos 
+              INNER JOIN categoria_evento ON eventos.id_cat_evento = categoria_evento.id_categoria 
+              INNER JOIN invitados ON eventos.id_inv = invitados.invitado_id
+              AND eventos.id_cat_evento = 4 ORDER BY evento_id LIMIT 2; "; 
          }catch(\Exception $e){
              echo $e->getMessage();
          }
@@ -73,7 +89,7 @@
               <p><i class="fa fa-user"></i><?php echo $evento['nombre_invitado'].' '.$evento['apellido_invitado']; ?></p>
             </div>
          <?php if ($i % 2 == 1): ?>
-             <a href="#" class="button float-right">Vert todos</a>
+             <a href="calendario.php" class="button float-right">Vert todos</a>
           </div><!--#talleres-->
           <?php endif; ?>
          <?php $i++; ?> 
@@ -112,7 +128,7 @@
               <li>Todas las conferencias</li>
               <li>Todos los tallers</li>
             </ul>
-            <a href="#" class="button hollow">Comprar</a>
+            <a href="registro.php" class="button hollow">Comprar</a>
           </div>
         </li>
         <li>
@@ -124,7 +140,7 @@
               <li>Todas las conferencias</li>
               <li>Todos los tallers</li>
             </ul>
-            <a href="#" class="button">Comprar</a>
+            <a href="registro.php" class="button">Comprar</a>
           </div>
         </li>
         <li>
@@ -136,45 +152,30 @@
               <li>Todas las conferencias</li>
               <li>Todos los tallers</li>
             </ul>
-            <a href="#" class="button hollow">Comprar</a>
+            <a href="registro.php" class="button hollow">Comprar</a>
           </div>
         </li>
       </ul>
     </div>
   </section>
-
   <div id="mapa" class="mapa"></div>
+  <center> <a target="_blanck" href="https://www.google.com.mx/maps/place/19%C2%B013'57.7%22N+99%C2%B040'26.4%22W/@19.2328326,-99.6756808,17.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d19.2327!4d-99.674?hl=es-419"
+         class="button">Ir a maps</a> </center>
 
   <section class="seccion">
     <h2>Testimoniales</h2>
       <div class="testimoniales contenedor clearfix">
+      <?php while($invitado = $res->fetch_assoc()){ ?>
         <div class="testimonial">    
           <blockquote>    
-            <p> Entre los distintos tipos se encuentra el párrafo científico que se caracteriza por contar con procedimientos especiales en la selección, organización y uso de las unidades morfológicas, léxicas, sintácticas y textuales que permiten transmitir de forma óptima la información.</p>    
+            <p><?php echo $invitado['testimonial']; ?></p>    
             <footer class="info-testimonial clearfix">    
-              <img src="img/testimonial.jpg">
-              <cite>Oswaldo Aponte Escobedo<span>Diseñador en @printer</span></cite>    
-            </footer>    
-          </blockquote>    
-        </div><!--testimonial-->    
-        <div class="testimonial">    
-          <blockquote>    
-            <p> Entre los distintos tipos se encuentra el párrafo científico que se caracteriza por contar con procedimientos especiales en la selección, organización y uso de las unidades morfológicas, léxicas, sintácticas y textuales que permiten transmitir de forma óptima la información.</p>    
-            <footer class="info-testimonial clearfix">    
-              <img src="img/testimonial.jpg">
-              <cite>Oswaldo Aponte Escobedo<span>Diseñador en @printer</span></cite>    
-            </footer>    
-          </blockquote>    
-        </div><!--testimonial-->    
-        <div class="testimonial">    
-          <blockquote>    
-            <p> Entre los distintos tipos se encuentra el párrafo científico que se caracteriza por contar con procedimientos especiales en la selección, organización y uso de las unidades morfológicas, léxicas, sintácticas y textuales que permiten transmitir de forma óptima la información.</p>    
-            <footer class="info-testimonial clearfix">    
-              <img src="img/testimonial.jpg">
-              <cite>Oswaldo Aponte Escobedo<span>Diseñador en @printer</span></cite>    
+              <img src="img/invitados/<?php echo $invitado['url_imagen']; ?>">
+              <cite><?php echo $invitado['nombre_invitado']." ".$invitado['apellido_invitado']; ?> <span><?php echo $invitado['twiter']; ?></span></cite>  
             </footer>    
           </blockquote>    
         </div><!--testimonial-->
+      <?php } ?>
       </div>  
   </section>
 
