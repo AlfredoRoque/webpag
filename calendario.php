@@ -17,9 +17,6 @@
          }
 
       ?>
-      <?php
-            echo ($resultado);
-      ?>
       <div class="calendario">
         <?php 
           $calendario = array();
