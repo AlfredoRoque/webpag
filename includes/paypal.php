@@ -2,7 +2,7 @@
 
 require 'paypal/autoload.php';
 
-define('URL_SITIO', 'http://localhost/webpag');
+define('URL_SITIO', 'https://webcamp-dev.herokuapp.com/');
 
 // cargar el SDK de paypal
 
