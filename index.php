@@ -53,22 +53,22 @@
               nombre_invitado, apellido_invitado FROM eventos 
               INNER JOIN categoria_evento ON eventos.id_cat_evento = categoria_evento.id_categoria 
               INNER JOIN invitados ON eventos.id_inv = invitados.invitado_id
-              AND eventos.id_cat_evento = 1 ORDER BY evento_id LIMIT 2;
+              AND eventos.id_cat_evento = 5 ORDER BY evento_id LIMIT 2;
               SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono,
               nombre_invitado, apellido_invitado FROM eventos 
               INNER JOIN categoria_evento ON eventos.id_cat_evento = categoria_evento.id_categoria 
               INNER JOIN invitados ON eventos.id_inv = invitados.invitado_id
-              AND eventos.id_cat_evento = 2 ORDER BY evento_id LIMIT 2;
+              AND eventos.id_cat_evento = 15 ORDER BY evento_id LIMIT 2;
               SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono,
               nombre_invitado, apellido_invitado FROM eventos 
               INNER JOIN categoria_evento ON eventos.id_cat_evento = categoria_evento.id_categoria 
               INNER JOIN invitados ON eventos.id_inv = invitados.invitado_id
-              AND eventos.id_cat_evento = 3 ORDER BY evento_id LIMIT 2;
+              AND eventos.id_cat_evento = 25 ORDER BY evento_id LIMIT 2;
               SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono,
               nombre_invitado, apellido_invitado FROM eventos 
               INNER JOIN categoria_evento ON eventos.id_cat_evento = categoria_evento.id_categoria 
               INNER JOIN invitados ON eventos.id_inv = invitados.invitado_id
-              AND eventos.id_cat_evento = 4 ORDER BY evento_id LIMIT 2; "; 
+              AND eventos.id_cat_evento = 35 ORDER BY evento_id LIMIT 2; "; 
          }catch(\Exception $e){
              echo $e->getMessage();
          }
