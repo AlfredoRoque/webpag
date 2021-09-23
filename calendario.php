@@ -17,11 +17,9 @@
          }
 
       ?>
-      <script>
-        console.log(<?php
+      <?php
             echo ($resultado);
-        ?>);
-      </script>
+      ?>
       <div class="calendario">
         <?php 
           $calendario = array();
