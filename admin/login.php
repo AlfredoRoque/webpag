@@ -15,7 +15,7 @@ include_once 'templates/header.php';
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Inicia sesion aqui</p>
+    <p class="login-box-msg">Inicia Sesión</p>
 
     <form name="login-admin-form" id="login-admin" method="post" action="modelo-login.php">
       <div class="form-group has-feedback">
@@ -33,7 +33,7 @@ include_once 'templates/header.php';
         <!-- /.col -->
         <div class="col-xs-5">
           <input type="hidden" name="login-admin" value="1">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar Sesion</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar Sesión</button>
         </div>
         <!-- /.col -->
       </div>

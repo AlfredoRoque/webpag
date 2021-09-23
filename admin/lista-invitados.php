@@ -37,9 +37,9 @@ include_once 'templates/header.php';
                   <th>Nombre</th>
                   <th>Descripcion</th>
                   <th>Foto</th>
-                  <th>Acciones</th>
                   <th>Testimonial</th>
                   <th>Twiter</th>
+                  <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>

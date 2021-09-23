@@ -104,8 +104,10 @@
          $eventos_dias = array();
          while($eventos = $resultado->fetch_assoc()){
            $fecha = $eventos['fecha_evento'];
+        //    // unix
+        //    setlocale(LC_ALL, 'es_ES.UTF-8');
           //  traduccion de idioma
-          setlocale(LC_ALL, 'es_ES');
+        //   setlocale(LC_ALL, 'spanish');
           // obtener el dia a partie de la fecha
           $dia_semana = strftime("%A", strtotime($fecha));
 
@@ -130,9 +132,15 @@
                 <?php foreach ($eventos_dias as $dia => $eventos) {?>
 
 
-                <div id="<?php /*remplazar el acento de sábado*/echo str_replace('á', 'a', $dia); ?>"
+                <div id="<?php /*remplazar el acento de sábado*/echo $dia; ?>"
                     class="contenido-dia clearfix">
-                    <h4><?php echo $dia; ?></h4>
+                    <h4><?php 
+                            
+                            $buscar= array("Friday", "Saturday", "Sunday");
+                            $poner= array("Viernes", "Sábado", "Domingo");
+                            echo str_replace($buscar,$poner,$dia);
+
+                            ?></h4>
                     <?php foreach($eventos['eventos'] as $tipo => $eventos_dia): ?>
                     <div>
                         <p><?php echo $tipo; ?></p>

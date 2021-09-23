@@ -16,7 +16,6 @@ include_once 'templates/header.php';
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Home
             <small>Información sobre el evento</small>
         </h1>
     </section>

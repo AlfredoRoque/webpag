@@ -19,6 +19,7 @@ if($_POST['registro'] == 'nuevo' ){
         if($id_registro > 0){
             $respuesta = array(
                 'respuesta' => 'exito',
+                'tipo' => 'admin',
                 'id_admin' => $id_registro
             );
         }else{
@@ -57,6 +58,7 @@ if($_POST['registro']  == 'actualizar' ){
         if($stmt->affected_rows){
             $respuesta = array(
                 'respuesta' => 'exito',
+                'tipo' => 'admin',
                 'id_actualizado' => $stmt->insert_id
             );
         }else{
@@ -85,6 +87,7 @@ if($_POST['registro'] == 'eliminar'){
         if($stmt->affected_rows){
             $respuesta = array(
                 'respuesta' => 'exito',
+                'tipo' => 'admin',
                 'id_eliminado' => $id_borrar
             );
         }else{

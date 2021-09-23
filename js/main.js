@@ -1,19 +1,20 @@
     // imprimir el mapa solo en el index
     var existe = $('.mapa').show();
     if(existe.length == 1){
-        var map = L.map('mapa').setView([19.2327,-99.6740], 17);
+        var map = L.map('mapa').setView([19.293671546263646, -99.65369896376903], 17);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        L.marker([19.2327,-99.6740]).addTo(map)
-          .bindPopup('Aqui estoy.')
+        L.marker([19.293671546263646, -99.65369896376903]).addTo(map)
+          .bindPopup('Aqui Estamos.')
           .openPopup();
     }
 
 $(function(){
 
+    eventDay = '2021/12/22 15:00:00';
     // lettering
     $('.nombre-sitio').lettering();
 
@@ -68,7 +69,7 @@ $(function(){
     }
 
     // cuenta regresiva
-    $('.cuenta-regresiva').countdown('2019/12/22 01:00:00', function(event){
+    $('.cuenta-regresiva').countdown(eventDay, function(event){
         $('#dias').html(event.strftime('%D'));
         $('#horas').html(event.strftime('%H'));
         $('#minutos').html(event.strftime('%M'));

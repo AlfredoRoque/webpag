@@ -1,12 +1,12 @@
 <footer class="site-footer">
     <div class="contenedor clearfix">
       <div class="footer-informacion">
-        <h3>Sobre <span>Gdlwebcamp</span></h3>
+        <h3>Sobre <span>Webcamp</span></h3>
         <p>Entre los distintos tipos se encuentra el párrafo científico que se caracteriza por contar con procedimientos especiales en la selección, organización y uso de las unidades morfológicas, léxicas, sintácticas y textuales que permiten transmitir de forma óptima la información.</p>
       </div>
       <div class="ultimos-tweets">
         <h3>Ultimos <span>tweets</span></h3>
-        <a class="twitter-timeline" data-height="400" data-theme="dark" data-link-color="#fe4918" href="https://twitter.com/Alfredo_Rocke?ref_src=twsrc%5Etfw">Tweets by Alfredo_Rocke</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline" data-height="400" data-theme="dark" data-link-color="#fe4918" href="https://twitter.com/Alfredo_Rocke">Tweets by Alfredo_Rocke</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <div class="menu">
         <h3>Redes <span>sociales</span></h3>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <p class="copyright">
-      Todos los derechos reservados GDLWEBCAMP 2018.
+      Todos los derechos reservados WEBCAMP 2021.
     </p>
 
  <!-- Begin Mailchimp Signup Form -->

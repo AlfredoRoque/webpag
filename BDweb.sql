@@ -15,7 +15,7 @@ editado datetime not null, primary key(invitado_id))ENGINE=InnoDB CHARACTER SET 
 
 create table eventos(evento_id int(11) not null auto_increment, nombre_evento varchar(60) not null, fecha_evento Date, hora_evento Time, id_cat_evento int(11) not null,
 id_inv int(11) not null, clave varchar(10),editado datetime not null, primary key (evento_id), foreign key (id_cat_evento) references categoria_evento (id_categoria), 
-foreign key (id_inv) references invitados (invitado_id))ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
+foreign key (id_inv) references invitados (invitado_id) ON DELETE CASCADE)ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 create table regalos(id_regalo int(11) not null auto_increment, nombre_regalo varchar(50) not null, 
 primary key(id_regalo))ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
@@ -23,7 +23,7 @@ primary key(id_regalo))ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
 create table registrados(id_registrado bigint(20) unsigned not null auto_increment, nombre_registrado varchar(50) not null, apellido_registrado varchar(50) not null, 
 email_registrado varchar(100) not null, fecha_registro datetime, pases_articulos longtext not null, talleres_registrados longtext not null, 
 regalo int(11) not null, total_pagado varchar(50) not null, pagado int(1) default 0 not null, primary key(id_registrado), 
-foreign key (regalo) references regalos (id_regalo))ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
+foreign key (regalo) references regalos (id_regalo) ON DELETE CASCADE)ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 /*tablas para administradores*/
 create table admins(id_admin int(11) not null auto_increment, usuario varchar(50) not null, nombre varchar(100) not null, password varchar(60) not null, 
@@ -40,48 +40,48 @@ INSERT INTO regalos(nombre_regalo) VALUES('Pulseras');
 INSERT INTO regalos(nombre_regalo) VALUES('Etiquetas');
 INSERT INTO regalos(nombre_regalo) VALUES('Plumas');
 
-INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Rafael','Bautista','Entre los distintos tipos se encuentra el p醨rafo cient韋ico que se caracteriza por contar con procedimientos especiales en la selecci髇, organizaci髇 y uso de las unidades morfol骻icas.','invitado1.jpg', 'este es mi testimonial', '@Rbautista');
-INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Shari','Herrera','organizaci髇 y uso de las unidades morfol骻icas, l閤icas, sint醕ticas y textuales que permiten transmitir de forma 髉tima la informaci髇.','invitado2.jpg', 'este es mi testimonial', '@Sherrera');
-INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Gregorio','Sanchez','especiales en la selecci髇, organizaci髇 y uso de las unidades morfol骻icas, l閤icas, sint醕ticas y textuales que permiten transmitir de forma 髉tima la informaci髇.','invitado3.jpg', 'este es mi testimonial', '@Gsanchez');
-INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Susana','Rivera','sint醕ticas y textuales que permiten transmitir de forma 髉tima la informaci髇.','invitado4.jpg', 'este es mi testimonial', '@Srivera');
-INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Harold','Garcia','Entre los distintos tipos se encuentra el p醨rafo cient韋ico que se caracteriza por contar con procedimientos especiales en la selecci髇, organizaci髇 y uso de las unidades morfol骻icas, l閤icas, sint醕ticas y textuales que permiten transmitir de forma 髉tima la informaci髇.','invitado5.jpg', 'este es mi testimonial', '@Hgarcia');
-INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Susan','Sanchez','Entre los distintos tipos se encuentra el p醨rafo cient韋ico que se caracteriza por contar con procedimientos especiales en la selecci髇, organizaci髇 y uso de las unidades morfol骻icas, l閤icas, sint醕ticas y textuales que permiten transmitir de forma 髉tima la informaci髇.','invitado6.jpg', 'este es mi testimonial', '@Ssanchez');
+INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Rafael','Bautista','Entre los distintos tipos se encuentra el p谩rrafo cient铆fico que se caracteriza por contar con procedimientos especiales en la selecci贸n, organizaci贸n y uso de las unidades morfol贸gicas.','invitado1.jpg', 'este es mi testimonial', '@Rbautista');
+INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Shari','Herrera','organizaci贸n y uso de las unidades morfol贸gicas, l茅xicas, sint谩cticas y textuales que permiten transmitir de forma 贸ptima la informaci贸n.','invitado2.jpg', 'este es mi testimonial', '@Sherrera');
+INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Gregorio','Sanchez','especiales en la selecci贸n, organizaci贸n y uso de las unidades morfol贸gicas, l茅xicas, sint谩cticas y textuales que permiten transmitir de forma 贸ptima la informaci贸n.','invitado3.jpg', 'este es mi testimonial', '@Gsanchez');
+INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Susana','Rivera','sint谩cticas y textuales que permiten transmitir de forma 贸ptima la informaci贸n.','invitado4.jpg', 'este es mi testimonial', '@Srivera');
+INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Harold','Garcia','Entre los distintos tipos se encuentra el p谩rrafo cient铆fico que se caracteriza por contar con procedimientos especiales en la selecci贸n, organizaci贸n y uso de las unidades morfol贸gicas, l茅xicas, sint谩cticas y textuales que permiten transmitir de forma 贸ptima la informaci贸n.','invitado5.jpg', 'este es mi testimonial', '@Hgarcia');
+INSERT INTO invitados(nombre_invitado, apellido_invitado, descripcion, url_imagen, testimonial, twiter) VALUES ('Susan','Sanchez','Entre los distintos tipos se encuentra el p谩rrafo cient铆fico que se caracteriza por contar con procedimientos especiales en la selecci贸n, organizaci贸n y uso de las unidades morfol贸gicas, l茅xicas, sint谩cticas y textuales que permiten transmitir de forma 贸ptima la informaci贸n.','invitado6.jpg', 'este es mi testimonial', '@Ssanchez');
 
 
  
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Flexbox', '2016-12-09', '12:00:00', '3', '2', 'taller_02');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'HTML5 y CSS3', '2016-12-09', '14:00:00', '3', '3', 'taller_03');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Flexbox', '2021-12-09', '12:00:00', '3', '2', 'taller_02');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'HTML5 y CSS3', '2021-12-09', '14:00:00', '3', '3', 'taller_03');
 
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Drupal', '2016-12-09', '17:00:00', '3', '4', 'taller_04');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'WordPress', '2016-12-09', '19:00:00', '3', '5', 'taller_05');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Como ser freelancer', '2016-12-09', '10:00:00', '2', '6', 'conf_01');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Drupal', '2021-12-09', '17:00:00', '3', '4', 'taller_04');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'WordPress', '2021-12-09', '19:00:00', '3', '5', 'taller_05');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Como ser freelancer', '2021-12-09', '10:00:00', '2', '6', 'conf_01');
 
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Tecnolog韆s del Futuro', '2016-12-09', '17:00:00', '2', '1', 'conf_02');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Tecnolog铆as del Futuro', '2021-12-09', '17:00:00', '2', '1', 'conf_02');
 
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Seguridad en la Web', '2016-12-09', '19:00:00', '2', '2', 'conf_03');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Dise駉 UI y UX para m髒iles', '2016-12-09', '10:00:00', '1', '6', 'sem_01');
-
-
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Seguridad en la Web', '2021-12-09', '19:00:00', '2', '2', 'conf_03');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Dise帽o UI y UX para m贸viles', '2021-12-09', '10:00:00', '1', '6', 'sem_01');
 
 
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'AngularJS', '2016-12-10', '10:00:00', '3', '1', 'taller_06');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'PHP y MySQL', '2016-12-10', '12:00:00', '3', '2', 'taller_07');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'JavaScript Avanzado', '2016-12-10', '14:00:00', '3', '3', 'taller_08');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'SEO en Google', '2016-12-10', '17:00:00', '3', '4', 'taller_09');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'De Photoshop a HTML5 y CSS3', '2016-12-10', '19:00:00', '3', '5', 'taller_10');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'PHP Intermedio y Avanzado', '2016-12-10', '21:00:00', '3', '6', 'taller_11');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Como crear una tienda online que venda millones en pocos d韆s', '2016-12-10', '10:00:00', '2', '6', 'conf_04');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Los mejores lugares para encontrar trabajo', '2016-12-10', '17:00:00', '2', '1', 'conf_05');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Pasos para crear un negocio rentable ', '2016-12-10', '19:00:00', '2', '2', 'conf_06');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Aprende a Programar en una ma馻na', '2016-12-10', '10:00:00', '1', '3', 'sem_02');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Dise駉 UI y UX para m髒iles', '2016-12-10', '17:00:00', '1', '5', 'sem_03');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Laravel', '2016-12-11', '10:00:00', '3', '1', 'taller_12');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Crea tu propia API', '2016-12-11', '12:00:00', '3', '2', 'taller_13');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'JavaScript y jQuery', '2016-12-11', '14:00:00', '3', '3', 'taller_14');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Creando Plantillas para WordPress', '2016-12-11', '17:00:00', '3', '4', 'taller_15');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Tiendas Virtuales en Magento', '2016-12-11', '19:00:00', '3', '5', 'taller_16');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Como hacer Marketing en l韓ea', '2016-12-11', '10:00:00', '2', '6', 'conf_07');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, '緾on que lenguaje debo empezar?', '2016-12-11', '17:00:00', '2', '2', 'conf_08');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Frameworks y librerias Open Source', '2016-12-11', '19:00:00', '2', '3', 'conf_09');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Creando una App en Android en una ma馻na', '2016-12-11', '10:00:00', '1', '4', 'sem_04');
-INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Creando una App en iOS en una tarde', '2016-12-11', '17:00:00', '1', '1', 'sem_05');
+
+
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'AngularJS', '2021-12-10', '10:00:00', '3', '1', 'taller_06');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'PHP y MySQL', '2021-12-10', '12:00:00', '3', '2', 'taller_07');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'JavaScript Avanzado', '2021-12-10', '14:00:00', '3', '3', 'taller_08');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'SEO en Google', '2021-12-10', '17:00:00', '3', '4', 'taller_09');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'De Photoshop a HTML5 y CSS3', '2021-12-10', '19:00:00', '3', '5', 'taller_10');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'PHP Intermedio y Avanzado', '2021-12-10', '21:00:00', '3', '6', 'taller_11');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Como crear una tienda online que venda millones en pocos d铆as', '2021-12-10', '10:00:00', '2', '6', 'conf_04');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Los mejores lugares para encontrar trabajo', '2021-12-10', '17:00:00', '2', '1', 'conf_05');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Pasos para crear un negocio rentable ', '2021-12-10', '19:00:00', '2', '2', 'conf_06');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Aprende a Programar en una ma帽ana', '2021-12-10', '10:00:00', '1', '3', 'sem_02');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Dise帽o UI y UX para m贸viles', '2021-12-10', '17:00:00', '1', '5', 'sem_03');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Laravel', '2021-12-11', '10:00:00', '3', '1', 'taller_12');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Crea tu propia API', '2021-12-11', '12:00:00', '3', '2', 'taller_13');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'JavaScript y jQuery', '2021-12-11', '14:00:00', '3', '3', 'taller_14');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Creando Plantillas para WordPress', '2021-12-11', '17:00:00', '3', '4', 'taller_15');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Tiendas Virtuales en Magento', '2021-12-11', '19:00:00', '3', '5', 'taller_16');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Como hacer Marketing en l铆nea', '2021-12-11', '10:00:00', '2', '6', 'conf_07');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Con que lenguaje debo empezar?', '2021-12-11', '17:00:00', '2', '2', 'conf_08');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Frameworks y librerias Open Source', '2021-12-11', '19:00:00', '2', '3', 'conf_09');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Creando una App en Android en una m帽ana', '2021-12-11', '10:00:00', '1', '4', 'sem_04');
+INSERT INTO `gdlwebcamp`.`eventos` (`evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `id_cat_evento`, `id_inv`, `clave`) VALUES (NULL, 'Creando una App en iOS en una tarde', '2021-12-11', '17:00:00', '1', '1', 'sem_05');

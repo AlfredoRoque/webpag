@@ -26,11 +26,22 @@ $(document).ready(function(){
                         'Se guardo correctamente',
                         'success'
                     )
+                    if(resultado.tipo == "evento"){
+                        window.location = "lista-evento.php";
+                    }else if(resultado.tipo == "categoria"){
+                        window.location = "lista-categoria.php";
+                    }else if(resultado.tipo == "invitado"){
+                        window.location = "lista-invitados.php";
+                    }else if(resultado.tipo == "registrado"){
+                        window.location = "lista-registrados.php";
+                    }else if(resultado.tipo == "admin"){
+                        window.location = "lista-admin.php";
+                    }
                 }else{
                     swal({
                         type: 'error',
-                        title: 'Ora',
-                        text: 'Something went wrong!',
+                        title: 'Algo salio mal!!',
+                        text: 'Revise que toda la información sea correcta',
                       })
                 }
             }
@@ -68,11 +79,22 @@ $(document).ready(function(){
                         'Se guardo correctamente',
                         'success'
                     )
+                    if(resultado.tipo == "evento"){
+                        window.location = "lista-evento.php";
+                    }else if(resultado.tipo == "categoria"){
+                        window.location = "lista-categoria.php";
+                    }else if(resultado.tipo == "invitado"){
+                        window.location = "lista-invitados.php";
+                    }else if(resultado.tipo == "registrado"){
+                        window.location = "lista-registrados.php";
+                    }else if(resultado.tipo == "admin"){
+                        window.location = "lista-admin.php";
+                    }
                 }else{
                     swal({
                         type: 'error',
-                        title: 'Ora',
-                        text: 'Something went wrong!',
+                        title: 'Algo salio mal!!',
+                        text: 'Revise que toda la información sea correcta',
                       })
                 }
             }
@@ -87,7 +109,7 @@ $(document).ready(function(){
         var tipo = $(this).attr('data-tipo');
         swal({
             title: 'Estas seguro?',
-            text: "You won't be able to revert this!",
+            text: "No podras revertir los cambios!",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -96,6 +118,7 @@ $(document).ready(function(){
             cancelButtonText: 'Cancelar'
             }).then(function(e) {
                 if(e.value){
+                    console.log(id);
                 $.ajax({
                     type: 'post',
                     data:{
@@ -107,8 +130,8 @@ $(document).ready(function(){
                         var resultado = JSON.parse(data);
                         if(resultado.respuesta == 'exito'){
                             swal(
-                                'Deleted!',
-                                'Archivo eliminado.',
+                                'Borrado!',
+                                'Registro eliminado.',
                                 'success'
                               )
                               jQuery('[data-id="'+resultado.id_eliminado+'"]').parents('tr').remove();

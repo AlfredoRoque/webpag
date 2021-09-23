@@ -27,7 +27,7 @@ include_once 'templates/header.php';
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Gestiona a los evntos registrados.</h3>
+              <h3 class="box-title">Gestiona a los eventos registrados.</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

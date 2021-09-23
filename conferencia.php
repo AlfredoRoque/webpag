@@ -1,7 +1,7 @@
 <?php include_once 'includes/templetes/header.php'; ?>
 
   <section class="seccion contenedor">
-    <h2>La mejor conferencia de diseño web</h2>
+    <h2>La mejor conferencia de desarrollo web</h2>
     <p>
       Entre los distintos tipos se encuentra el párrafo científico que se caracteriza por contar con procedimientos especiales en la selección, organización y uso de las unidades morfológicas, léxicas, sintácticas y textuales que permiten transmitir de forma óptima la información.
     </p>

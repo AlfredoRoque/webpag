@@ -354,11 +354,11 @@ nav.navegacion-principal a{
 nav.navegacion-principal a:hover{
     background-color: #fe4918;
 }
-nav.navegacion-principal a:last-child{
+nav.navegacion-principal a:nth-child(4){
     border: 2px solid #fe4918;
     color: #fe4918;
 }
-nav.navegacion-principal a:last-child:hover{
+nav.navegacion-principal a:nth-child(4):hover{
     color: white;
 }
 @media only screen and (min-width: 768px){
@@ -417,7 +417,7 @@ div.contenido-programa{
 }
 div.programa-evento{
     background-color: rgba(255,255,255, .8);
-    padding: 15px;
+    padding: 15px 15px -1px 15px;
     margin-top: 80px;
 }
 @media only screen and (min-width: 768px){

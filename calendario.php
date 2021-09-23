@@ -48,9 +48,11 @@
                         // unix
                         setlocale(LC_TIME, 'es_ES.UTF-8');
                         // windows
-                        setlocale(LC_TIME, 'spanish');
+                        // setlocale(LC_ALL, 'spanish');
 
-                        echo strftime("%A, %d de %B del %Y", strtotime($dia));  ?>
+                        $buscar= array("Friday", "Saturday", "Sunday","December");
+                        $poner= array("Viernes", "Sábado", "Domingo","Diciembre");
+                        echo str_replace($buscar,$poner,strftime("%A, %d de %B del %Y",strtotime($dia)));?>
                  </h3>
                  <?php foreach($lista_eventos as $evento) {?>
                      <div class="dia">

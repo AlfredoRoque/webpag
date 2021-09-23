@@ -126,15 +126,15 @@
                     var diasElegidos = [];
 
                     if(boletosDia > 0){
-                        diasElegidos.push('viernes');
+                        diasElegidos.push('Friday');
                         console.log(diasElegidos);
                     }
                     if(boletos2Dias > 0){
-                        diasElegidos.push('viernes','sabado');
+                        diasElegidos.push('Friday','Saturday');
                         console.log(diasElegidos);
                     }
                     if(boletoCompleto > 0){
-                        diasElegidos.push('viernes','sabado','domingo');
+                        diasElegidos.push('Friday','Saturday','Sunday');
                         console.log(diasElegidos);
                     }
                     if(diasElegidos.length > 0){
@@ -142,9 +142,9 @@
                         document.getElementById(diasElegidos[i]).style.display = 'block';
                         } 
                     }else{
-                        document.getElementById('viernes').style.display = '';
-                        document.getElementById('sabado').style.display = '';
-                        document.getElementById('domingo').style.display = '';
+                        document.getElementById('Friday').style.display = '';
+                        document.getElementById('Saturday').style.display = '';
+                        document.getElementById('Sunday').style.display = '';
                     }
                    
                 }

@@ -40,6 +40,7 @@ if($_POST['registro'] == 'nuevo' ){
             $respuesta = array(
                 'respuesta' => 'exito',
                 'id_insertado' => $id_insertado,
+                'tipo' => "invitado",
                 'resultado_imagen' => $imagen_resultado
             );
         }else{
@@ -99,6 +100,7 @@ if($_POST['registro']  == 'actualizar' ){
         if($registros > 0){
             $respuesta = array(
                 'respuesta' => 'exito',
+                'tipo' => "invitado",
                 'id_actualizado' => $id_registro
             );
         }else{
@@ -118,7 +120,6 @@ if($_POST['registro']  == 'actualizar' ){
 
 if($_POST['registro'] == 'eliminar'){
     $id_borrar = $_POST['id'];
-
     try {
         $stmt = $conn->prepare(" DELETE FROM invitados WHERE invitado_id = ? ");
         $stmt->bind_param('i', $id_borrar); 
@@ -126,6 +127,7 @@ if($_POST['registro'] == 'eliminar'){
         if($stmt->affected_rows){
             $respuesta = array(
                 'respuesta' => 'exito',
+                'tipo' => "invitado",
                 'id_eliminado' => $id_borrar
             );
         }else{

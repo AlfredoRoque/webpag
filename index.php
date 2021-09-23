@@ -11,7 +11,7 @@
 
         ?>
   <section class="seccion contenedor">
-    <h2>La mejor conferencia de diseño web</h2>
+    <h2>La mejor conferencia de desarrollo web</h2>
     <p>
       Entre los distintos tipos se encuentra el párrafo científico que se caracteriza por contar con procedimientos especiales en la selección, organización y uso de las unidades morfológicas, léxicas, sintácticas y textuales que permiten transmitir de forma óptima la información.
     </p>
@@ -159,7 +159,7 @@
     </div>
   </section>
   <div id="mapa" class="mapa"></div>
-  <center> <a target="_blanck" href="https://www.google.com.mx/maps/place/19%C2%B013'57.7%22N+99%C2%B040'26.4%22W/@19.2328326,-99.6756808,17.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d19.2327!4d-99.674?hl=es-419"
+  <center> <a target="_blanck" href="https://www.google.com.mx/maps/place/Cosmovitral+Jard%C3%ADn+Bot%C3%A1nico/@19.2928741,-99.6540101,18.75z/data=!4m5!3m4!1s0x85cd89ea33402ba5:0x19fcd4be3a072f99!8m2!3d19.2935727!4d-99.6537108"
          class="button">Ir a maps</a> </center>
 
   <section class="seccion">
@@ -182,7 +182,7 @@
   <div class="newsletter paralax">
     <div class="contenido contenedor">
       <p>Registrate al newsletter:</p>
-      <h3>Gdlwebcamp</h3>
+      <h3>Webcamp</h3>
       <a href="#mc_embed_signup" class="boton_newsletter button transparente">Registro</a>
     </div>
   </div><!--newsletter-->

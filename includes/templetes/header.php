@@ -64,8 +64,8 @@
              <p class="fecha"><i class="far fa-calendar-alt"></i> 10-12 Dic</p>
              <p class="ciudad"><i class="fas fa-map-marked-alt"></i> Toluca, MX</p>
           </div>
-          <h1 class="nombre-sitio">WEB PAG</h1>
-          <p class="slogan">Una gran conferenia<span> programación</span></p>
+          <h1 class="nombre-sitio">WEB CAMP</h1>
+          <p class="slogan">Una gran conferencia de<span> programación</span></p>
         </div>
       </div><!--informacion del evento-->
         
@@ -76,7 +76,7 @@
     <div class="contenedor clearfix">
       <div class="logo">
         <a href="index.php">
-        <img src="img/logo.svg" alt="logo Proyecto">
+        <img src="img/logor.svg" alt="logo Proyecto">
         </a>
       </div>
       <div class="menu-movil">
@@ -90,6 +90,7 @@
         <a href="calendario.php">Calendario</a>
         <a href="invitados.php">Invitado</a>
         <a href="registro.php">Reservaciones</a>
+        <a target="_blank" class="navegacion-principal clearfix" href="admin/login.php">Administrar</a>
       </nav>
     </div><!--contenedor-->
   </div><!--barra-->
